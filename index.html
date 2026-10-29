@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Standardized Testing in College Admissions Act</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+body{margin:0}
+
+/* Layout: full-width navy banner with sticky tab bar, boxed page title, single reading column below. */
+:root {
+  --bg: #fbfaf7;
+  --fg: #1c2230;
+  --muted: #5b6475;
+  --line: #d9d6cc;
+  --navy: #14284b;
+  --navy-deep: #0c1a33;
+  --brass: #b28a3c;
+  --panel: #f1eee6;
+  --flag: #fff6d6;
+  --flag-line: #d9b84a;
+  --link: #1d4f9c;
+  --display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10151f; --fg: #e8e6df; --muted: #a2a9b8; --line: #2d3547;
+    --panel: #172033; --flag: #2a2411; --flag-line: #8a7326; --link: #8db4f0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #10151f; --fg: #e8e6df; --muted: #a2a9b8; --line: #2d3547;
+  --panel: #172033; --flag: #2a2411; --flag-line: #8a7326; --link: #8db4f0;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--body); font-size: 18px; line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--navy-deep); z-index: 10; }
+a { color: var(--link); }
+:focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+
+.band { margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px))); }
+header.band {
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.035) 0 2px, transparent 2px 14px),
+    linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: #fff;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--navy-deep);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  border-bottom: 2px solid var(--brass);
+}
+.navin { max-width: 1040px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 10px; }
+.brand { font-family: var(--display); font-weight: 700; color: #fff; font-size: 1.05rem; white-space: nowrap; }
+.tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.tabs a { font-family: var(--ui); font-size: .92rem; font-weight: 500; color: #cfd6e6; text-decoration: none; padding: 8px 12px; border-bottom: 3px solid transparent; }
+.tabs a:hover { color: #fff; }
+.tabs a[aria-current="page"] { color: #fff; border-bottom-color: var(--brass); font-weight: 600; }
+
+.hero { max-width: 1040px; margin: 0 auto; padding-block: 56px 60px; display: flex; justify-content: center; }
+.titlebox { border: 4px solid #fff; padding: 22px 40px; text-align: center; max-width: 760px; }
+.titlebox h1 { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 5vw, 3.2rem); line-height: 1.15; margin: 0; text-wrap: balance; }
+.titlebox p { font-family: var(--ui); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: #d9c48f; margin: 10px 0 0; }
+
+main { max-width: 760px; margin: 0 auto; padding-block: 40px 56px; }
+section.view[hidden] { display: none; }
+h2 { font-family: var(--display); font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; text-wrap: balance; }
+h3 { font-family: var(--display); font-size: 1.25rem; margin: 0 0 6px; }
+.lede { color: var(--muted); margin: 0 0 24px; }
+.sponsor { font-family: var(--ui); font-size: .9rem; color: var(--muted); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 6px 28px; }
+.sponsor b { color: var(--fg); font-weight: 600; }
+
+.tablewrap { overflow-x: auto; margin: 8px 0 28px; }
+table { border-collapse: collapse; width: 100%; font-family: var(--ui); font-size: .95rem; min-width: 440px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { width: 30%; background: var(--panel); font-weight: 600; }
+
+.placeholder { background: var(--flag); border: 2px dashed var(--flag-line); padding: 14px 16px; font-family: var(--ui); font-size: .92rem; line-height: 1.5; margin: 12px 0 28px; }
+.placeholder b { display: block; margin-bottom: 2px; }
+
+.bill { border: 1px solid var(--line); background: var(--bg); }
+.billhead { background: var(--panel); border-bottom: 1px solid var(--line); padding: 20px 24px; text-align: center; }
+.billhead .small { font-family: var(--ui); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.billhead .meta { font-family: var(--ui); font-size: .95rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 28px; margin: 10px 0 0; }
+.billbody { padding: 24px; }
+.billbody .intro { margin: 0 0 22px; }
+.billbody h3 { margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--line); }
+.billbody h3:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+.clause { margin: 0 0 10px; padding-left: 0; }
+.clause .cap { font-variant: small-caps; letter-spacing: .04em; font-weight: 600; }
+
+.letter p { line-height: 2.1; margin: 0 0 12px; }
+.proof { border: 1px solid var(--line); padding: 14px 16px; font-family: var(--ui); font-size: .92rem; margin-top: 20px; }
+
+ol.refs { padding-left: 1.4em; }
+ol.refs li { padding-left: .3em; margin-bottom: 12px; text-indent: 0; }
+
+ul.links { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+ul.links li { border: 1px solid var(--line); padding: 12px 16px; }
+ul.links a { font-family: var(--ui); font-weight: 600; }
+ul.links span { display: block; color: var(--muted); font-size: .95rem; }
+
+footer { border-top: 1px solid var(--line); padding-block: 20px 28px; font-family: var(--ui); font-size: .82rem; color: var(--muted); max-width: 760px; margin: 0 auto; }
+@media (max-width: 520px) {
+  body { font-size: 17px; }
+  .titlebox { padding: 16px 18px; }
+  .billbody, .billhead { padding: 18px 16px; }
+  .hero { padding-block: 36px 40px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .view { animation: rise .25s ease-out; }
+  @keyframes rise { from { opacity: .0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+}
+</style>
+</head>
+<body>
+
+
+<header class="band">
+  <div class="hero">
+    <div class="titlebox">
+      <h1 id="pagetitle">Standardized Testing in College Admissions Act</h1>
+      <p id="pagesub">H.R. 17 &middot; Committee on Education and Labor</p>
+    </div>
+  </div>
+</header>
+<nav class="band" aria-label="Site sections">
+  <div class="navin">
+    <span class="brand">H.R. 17</span>
+    <div class="tabs" id="tabs">
+      <a href="#home">Home</a>
+      <a href="#bill">Bill</a>
+      <a href="#letter">Letter</a>
+      <a href="#bibliography">Bibliography</a>
+      <a href="#links">Additional Links</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<section class="view" id="view-home" data-title="Standardized Testing in College Admissions Act">
+  <h2>About this bill</h2>
+  <p class="lede">A bill that would require colleges receiving federal financial assistance to ask for and consider SAT or ACT scores, with an exemption for lower-income applicants.</p>
+  <p class="sponsor"><span><b>Sponsor:</b> Representative Romteen Azmoodeh</span><span><b>Bill:</b> H.R. 17</span><span><b>Committee:</b> Education and Labor</span></p>
+
+  <div class="placeholder"><b>Your turn: add 2 to 3 sentences here in your own voice.</b>Say why you chose this topic and what you want your committee to take away. Delete this box when done.</div>
+
+  <h3>The bill at a glance</h3>
+  <div class="tablewrap">
+  <table>
+    <tr><th>Who it covers</th><td>Four-year colleges that receive federal financial assistance and consider academic qualifications in admissions.</td></tr>
+    <tr><th>What it requires</th><td>Applicants submit a valid SAT or ACT score (either one, never both), and the college considers it.</td></tr>
+    <tr><th>What it leaves alone</th><td>No minimum weight for the score. Colleges still decide how much it counts and may weigh grades, essays, and activities.</td></tr>
+    <tr><th>Who is exempt</th><td>Applicants at or below the 33rd percentile of household income in their state of residence. They may still submit a score voluntarily, and no one may penalize them for skipping it.</td></tr>
+    <tr><th>Who enforces it</th><td>The Secretary of Education. Compliance becomes a condition of receiving federal financial assistance.</td></tr>
+    <tr><th>When it starts</th><td>Applicants for admission for the 2028&ndash;2029 academic year and every year after.</td></tr>
+  </table>
+  </div>
+  <p>Use the tabs above to read the full <a href="#bill">bill</a>, the <a href="#letter">letter to my Representative</a>, the <a href="#bibliography">bibliography</a>, and <a href="#links">additional links</a>.</p>
+</section>
+
+<section class="view" id="view-bill" data-title="The Bill" hidden>
+  <h2>The Bill</h2>
+  <p class="lede">House of Reps Bill Document</p>
+  <article class="bill">
+    <div class="billhead">
+      <p class="small">House of Representatives</p>
+      <p class="meta"><span><b>Representative:</b> Romteen Azmoodeh</span><span><b>H.R. Number:</b> 17</span></p>
+      <p class="meta" style="margin-top:6px"><span>Introduced the following bill:</span></p>
+    </div>
+    <div class="billbody">
+      <p class="intro"><b>A Bill to establish a standardized testing requirement for college admissions.</b><br>Be it enacted by the House of Representatives and the United States Senate in Congress assembled, that</p>
+
+      <h3>Purpose &amp; Goals</h3>
+      <div class="placeholder"><b>Write this part yourself.</b>Two to four sentences on the problem the bill fixes. The assignment sample starts with "Recognizing that..." or "Whereas...". Replace this box with your text.</div>
+
+      <h3>Section 1: Short Title and Definitions</h3>
+      <p class="clause">This Act may be cited as the &ldquo;Standardized Testing in College Admissions Act of 2026&rdquo;.</p>
+      <p class="clause"><span class="cap">(a) Covered institution.</span>&mdash;The term &ldquo;covered institution&rdquo; means a four-year institution of higher education that receives Federal financial assistance and considers academic qualifications in determining undergraduate admission.</p>
+      <p class="clause"><span class="cap">(b) Standardized test.</span>&mdash;The term &ldquo;standardized test&rdquo; means the SAT, administered by the College Board, or the ACT, administered by ACT, Inc.</p>
+      <p class="clause"><span class="cap">(c) Secretary.</span>&mdash;The term &ldquo;Secretary&rdquo; means the Secretary of Education.</p>
+
+      <h3>Section 2: Standardized Testing Requirement</h3>
+      <p class="clause"><span class="cap">(a) Requirement.</span>&mdash;Except as provided in section 4, each covered institution shall require each applicant for undergraduate admission to submit a valid SAT or ACT score as part of the applicant&rsquo;s application for admission.</p>
+      <p class="clause"><span class="cap">(b) Choice of examination.</span>&mdash;A covered institution shall not require an applicant to submit both an SAT and ACT score. An applicant may satisfy the requirement under subsection (a) by submitting a score from either examination.</p>
+
+      <h3>Section 3: Consideration of Test Scores</h3>
+      <p class="clause"><span class="cap">(a) Required consideration.</span>&mdash;Each covered institution shall consider an applicant&rsquo;s submitted standardized test score as a component of its undergraduate admissions process.</p>
+      <p class="clause"><span class="cap">(b) Institutional discretion.</span>&mdash;Nothing in this Act shall be construed to establish a minimum weight that a covered institution must assign to a standardized test score in making an admissions decision.</p>
+      <p class="clause"><span class="cap">(c) Additional factors.</span>&mdash;Nothing in this Act shall prohibit a covered institution from considering high school grades, coursework, extracurricular activities, essays, recommendations, or any other factor otherwise permitted by law when making an admissions decision.</p>
+
+      <h3>Section 4: Income-Based Exemption</h3>
+      <p class="clause"><span class="cap">(a) Exemption.</span>&mdash;An applicant whose household income is at or below the 33rd percentile of household income within the applicant&rsquo;s State of residence shall not be required to submit a standardized test score under section 2.</p>
+      <p class="clause"><span class="cap">(b) Determination of thresholds.</span>&mdash;The Secretary shall annually determine the household income threshold corresponding to the 33rd percentile for each State using the most recently available data from the Bureau of the Census.</p>
+      <p class="clause"><span class="cap">(c) Voluntary submission.</span>&mdash;An applicant exempt under subsection (a) may voluntarily submit an SAT or ACT score. If such an applicant submits a score, the covered institution shall consider the score in accordance with section 3.</p>
+      <p class="clause"><span class="cap">(d) No penalty for exemption.</span>&mdash;A covered institution may not penalize or otherwise disadvantage an applicant solely because the applicant qualifies for the exemption provided under subsection (a) and does not submit a standardized test score.</p>
+
+      <h3>Section 5: Administration, Enforcement, and Effective Date</h3>
+      <p class="clause"><span class="cap">(a) Administration.</span>&mdash;The Secretary shall administer and enforce the requirements of this Act.</p>
+      <p class="clause"><span class="cap">(b) Regulations.</span>&mdash;The Secretary may issue such regulations as are necessary to carry out this Act.</p>
+      <p class="clause"><span class="cap">(c) Compliance.</span>&mdash;Compliance with this Act shall be a condition of a covered institution&rsquo;s eligibility to receive Federal financial assistance.</p>
+      <p class="clause"><span class="cap">(d) Effective date.</span>&mdash;The requirements of this Act shall apply to applicants for undergraduate admission for the 2028&ndash;2029 academic year and each academic year thereafter.</p>
+
+      <h3>Conclusion</h3>
+      <div class="placeholder" style="margin-bottom:0"><b>Write this part yourself.</b>One or two sentences that sum up what the bill achieves. The assignment sample begins "Through the passage of the...". Replace this box with your text.</div>
+    </div>
+  </article>
+</section>
+
+<section class="view" id="view-letter" data-title="Letter" hidden>
+  <h2>Letter to My Representative</h2>
+  <p class="lede">A half-page letter, double spaced, sent to a member of Congress.</p>
+  <div class="placeholder"><b>Paste your letter here.</b>Half a page, double spaced. Cover the background on the issue and why the bill is necessary. Address it to your own Representative, whose name you can find by ZIP code at house.gov. The spacing below is already double.</div>
+  <div class="letter" aria-label="Letter text">
+    <p>[Date]</p>
+    <p>The Honorable [Representative&rsquo;s name]<br>[Address or &ldquo;Submitted through the Representative&rsquo;s website&rdquo;]</p>
+    <p>Dear Representative [Last name],</p>
+    <p>[Letter body]</p>
+    <p>Sincerely,<br>Romteen Azmoodeh</p>
+  </div>
+  <div class="proof"><b>Proof the letter was sent:</b> add a screenshot of the confirmation page or email here. This is required by the assignment.</div>
+</section>
+
+<section class="view" id="view-bibliography" data-title="Bibliography" hidden>
+  <h2>Bibliography</h2>
+  <p class="lede">MLA format, alphabetical by author or title. At least three sources.</p>
+  <div class="placeholder"><b>Add your sources here.</b>Replace the three example lines below. Use the MLA cheat sheet linked from the assignment. Only list sources you actually read.</div>
+  <ol class="refs">
+    <li>[Author last name, First name. &ldquo;Title of Article.&rdquo; <i>Name of Website or Publisher</i>, Publication date, URL.]</li>
+    <li>[Source 2]</li>
+    <li>[Source 3]</li>
+  </ol>
+</section>
+
+<section class="view" id="view-links" data-title="Additional Links" hidden>
+  <h2>Additional Links</h2>
+  <p class="lede">Background that connects to the bill.</p>
+  <ul class="links">
+    <li><a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">Find your Representative</a><span>House.gov lookup by ZIP code, used for the letter.</span></li>
+    <li><a href="https://www.census.gov/topics/income-poverty.html" target="_blank" rel="noopener">U.S. Census Bureau: Income and Poverty</a><span>The data source Section 4 uses for state income percentiles.</span></li>
+    <li><a href="https://satsuite.collegeboard.org/sat" target="_blank" rel="noopener">The SAT, College Board</a><span>The administrator named in the definition of standardized test.</span></li>
+    <li><a href="https://www.act.org/content/act/en/products-and-services/the-act.html" target="_blank" rel="noopener">The ACT</a><span>The other test the bill allows applicants to submit.</span></li>
+    <li><a href="https://www.congress.gov/" target="_blank" rel="noopener">Congress.gov</a><span>Official source for real bill text and the legislative process.</span></li>
+  </ul>
+  <div class="placeholder" style="margin-top:20px"><b>Add your own links.</b>Link the research you cite, and any article or data that supports the bill. Check each link opens before you submit.</div>
+</section>
+
+</main>
+<footer>Student project for AP Government, House of Representatives simulation. Sponsor: Romteen Azmoodeh.</footer>
+
+<script>
+(function () {
+  var names = ["home", "bill", "letter", "bibliography", "links"];
+  var tabs = document.querySelectorAll("#tabs a");
+  function show() {
+    var h = (location.hash || "#home").slice(1);
+    if (names.indexOf(h) < 0) h = "home";
+    names.forEach(function (n) {
+      var el = document.getElementById("view-" + n);
+      if (el) el.hidden = (n !== h);
+    });
+    tabs.forEach(function (a) {
+      if (a.getAttribute("href") === "#" + h) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    var cur = document.getElementById("view-" + h);
+    document.getElementById("pagetitle").textContent = cur.getAttribute("data-title");
+    document.getElementById("pagesub").style.visibility = (h === "home") ? "visible" : "hidden";
+  }
+  window.addEventListener("hashchange", function () { show(); window.scrollTo(0, 0); });
+  show();
+})();
+</script>
+
+</body>
+</html>
